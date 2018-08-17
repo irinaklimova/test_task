@@ -1,0 +1,6 @@
+.filter
+	.filter__item(*ngFor='let filter of filters')
+		label.filter__item__title {{filter.name}}
+		div(*ngFor='let option of filter.options')
+			input(type='checkbox', [checked]='isFilerSelected(filter.name, option.value)', (change)='changeFilter(filter.name, option.value)')
+			| {{option.value}}({{option.count}})

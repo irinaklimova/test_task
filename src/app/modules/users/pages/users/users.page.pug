@@ -1,0 +1,3 @@
+main.main
+	app-filters(*ngIf='filters.length', [filters]='filters', (setFilter)='setFilter($event);')
+	app-users-table(*ngIf='filteredUser.length', [users]='filteredUser')

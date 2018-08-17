@@ -1,0 +1,23 @@
+@import "../../../styles/index"
+
+.table
+  width 100%
+
+  &__head-title
+    text-transform capitalize
+
+  &__body-row
+    text-align center
+
+@media only screen and (max-width: 900px)
+  .sm-hidden
+    display none
+
+  .table__head-title_label
+    display block
+
+@media only screen and (max-width: 400px)
+  .table__head-title_label,
+  .table__head-title .icon-btn
+    margin auto
+    display block

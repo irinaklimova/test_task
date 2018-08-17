@@ -1,0 +1,16 @@
+table.table
+	thead.table__head
+		tr
+			th.table__head-title(*ngFor='let field of fields', [ngClass]='{"sm-hidden": field === "address"}')
+				label.table__head-title_label {{field}}&nbsp;
+				button.icon-btn((click)="sortBy(field, ASC)", [ngClass]='{"active": isSorted(field, ASC)}')
+					|&uarr;
+				button.icon-btn((click)="sortBy(field, DESC)", [ngClass]='{"active": isSorted(field, DESC)}')
+					|&darr;
+	tbody.table__body
+		tr.table__body-row(*ngFor='let user of users; index as i')
+			td {{user.name}}
+			td {{user.age}}
+			td {{user.gender}}
+			td {{user.department}}
+			td.sm-hidden {{user.address.city}},&nbsp;{{user.address.street}}
